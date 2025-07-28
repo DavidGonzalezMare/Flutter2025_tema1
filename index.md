@@ -3,7 +3,7 @@
 
 ![Introduccion](./images/imagen1.png)
 
-Flutter representa hoy en día una de las opciones más completas para el desarrollo de aplicaciones multiplataforma, y permite, con un único código fuente, generar aplicaciones natives para distintes plataformas, de escritorio, móviles y web.
+Flutter representa hoy en día una de las opciones más completas para el desarrollo de aplicaciones multiplataforma, y permite, con un único código fuente, generar aplicaciones nativas para distintas plataformas, de escritorio, móviles y web.
 
 En esta unidad introductoria veremos cómo realizar su instalación, así como las herramientas necesarias para la edición de código y su ejecución en distintos dispositivos.
 
@@ -20,7 +20,7 @@ En esta unidad introductoria veremos cómo realizar su instalación, así como l
 
 
 
-   # 1. <a name="_apartado1"></a>Desarrollo multiplataforma y Flutter
+# 1. <a name="_apartado1"></a>Desarrollo multiplataforma y Flutter
 
 ## ¿Qué entendemos por aplicaciones multiplataforma?
 Cuando hablamos de **aplicaciones multiplataforma** nos referimos a aquellas aplicaciones que son desarrolladas en un único lenguaje de programación y que facilitan su exportación y ejecución -con cambios mínimos- a cualquier dispositivo, de manera independiente al sistema operativo.
@@ -257,9 +257,60 @@ La primera vez que ejecutamos una aplicación conlleva la descarga al proyecto d
 
 ## Gestión de proyectos Flutter desde la línea de órdenes
 
-En este enlace se explica la posibilidad de gestionar la creación y ejecución de un proyecto desde la línea de comandos.
+Las herramientas que ofrece Flutter desde la línea de órdenes nos dan un abanico más ancho de posibilidades a la hora de crear aplicaciones y ejecutarlas en los diferentes dispositivos. 
 
-[http://joamuran.net/flutter_2024/u1/5.Projectes/#gestio-de-projectes-flutter-des-de-la-linia-dordres](http://joamuran.net/flutter_2024/u1/5.Projectes/%23gestio-de-projectes-flutter-des-de-la-linia-dordres)
+Vamos a ver ahora **cómo crear un proyecto** y lanzarlo en los dispositivos desde la línea de órdenes. 
+
+Recuerde que desde el propio VSCode podemos abrir la terminal integrada con **Ctrl+Shift+'**).
+
+### Creación de un proyecto desde la línea de órdenes
+
+La forma más sencilla de generar un proyecto nuevo en Flutter desde la línea de órdenes:
+
+`$ flutter create <directorio>`
+
+Que nos creará el proyecto en el directorio especificado, y para las plataformas Android, iOS, Linux, MacOS, web y Windows.
+
+Si queremos crear el proyecto para alguna plataforma específica, haríamos uso de la opción --platforms. Por ejemplo, la orden:
+
+`$ flutter create --platforms Android,Web,Linux ejemplo_1`
+
+Nos creará un proyecto llamado `ejemplo_1` para las plataformas Android, web y Linux.
+
+Vemos algunos detalles a tener en cuenta:
+
+- El nombre del proyecto debe ser un nombre de proyecto de Dart válido, lo que implica que sólo puede estar formado por letras minúsculas, numeros (excepto el primer dígito), y el guión bajo (_). Puede consultar en la documentación de Dart estas reglas de nomenclatura.
+
+- Si luego queremos incorporar una nueva plataforma, podemos invocar de nuevo el orden, añadiendo ésta. Por ejemplo:
+  
+```
+$ flutter crear --plataformas ios exemple_1/
+
+Recreando exemple_1 proyecto...
+```
+
+Creará el proyecto para la plataforma iOS, respetando el resto de código que teníamos en la aplicación.
+
+También podemos hacer uso del punto . como nombre de proyecto para crearlo en el directorio actual. 
+
+Por ejemplo, con:
+
+```
+$ cd exemple_1
+exemple_1$ flutter crear --platform windows .
+Recreando proyecto ....
+```
+
+Accedemos al directorio del proyecto y le añadimos la plataforma Windows desde dentro de la misma carpeta.
+
+La orden `flutter` create admite muchas más opciones para personalizar la creación de proyectos. 
+
+Podemos explorar estas ejecutando `flutter create --help`.
+
+Podéis encontrar más información sobre la integración de las aplicaciones Flutter en los diversos entornos de escritorio en el siguiente enlace de la documentación oficial:
+
+[https://docs.flutter.dev/development/platform-integration/desktop](https://docs.flutter.dev/development/platform-integration/desktop)
+
 
 
 
